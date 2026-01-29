@@ -114,6 +114,14 @@ h2 {
     opacity: 0.9;
 }
 
+/* Project Dividers*/
+.project-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 3rem 0;
+    opacity: 0.6;
+}
+
 /*Skills and About*/
 section p {
     margin-top: 0.5rem;

@@ -1,108 +1,127 @@
-<section>
-    <h2>Projects</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Thomas DeLange | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <!-- Game Project 1 -->
-    <div class="project">
-        <div class="media">
-            <video controls muted>
-                <source src="media/OvergrowthDemo1Cropped.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <header>
+        <h1>Thomas DeLange</h1>
+        <p class="subtitle">
+            Computer Science student interested in game development and software engineering.
+        </p>
+        <div class="links">
+            <a href="https://github.com/ThomasUNT" target="_blank">GitHub</a>
+            <a href="mailto:tdelange632@gmail.com">Email</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Projects</h2>
+
+        <!-- Game Project 1 -->
+        <div class="project">
+            <div class="media">
+                <video controls muted>
+                    <source src="Media/OvergrowthDemo1Cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="project-info">
+                <h3>2D Fantasy Platformer Team Project</h3>
+                <p class="tech">UNT LARC Engine - C++</p>
+
+                <ul>
+                    <li>Engine-level rendering and pipeline modifications</li>
+                    <li>Custom 3D sprite batching and depth sorting</li>
+                    <li>LDtk-driven levels with Box2D physics integration</li>
+                    <li>Multi-character platformer gameplay systems</li>
+                </ul>
+
+                <a href="https://github.com/jacob77Seven/Overgrowth" target="_blank">
+                    View on GitHub ->
+                </a>
+            </div>
         </div>
 
-        <div class="project-info">
-            <h3>2D Fantasy Platformer Team Project</h3>
-            <p class="role"><strong>My role:</strong> Designed and implemented the level pipeline, from authoring tools to runtime rendering and physics integration.</p>
-            <p class="tech">UNT LARC Engine - C++</p>
+        <!-- Compass Project -->
+        <div class="project">
+            <div class="media">
+                <img src="media/Compass2.jpg" alt="Wireless magic compass device">
+                <img src="media/CompassInternals.jpg" alt="Internal electronics of the compass">
+            </div>
 
-            <ul>
-                <li>Engine-level rendering and pipeline modifications</li>
-                <li>Custom 3D sprite batching and depth sorting</li>
-                <li>LDtk-driven levels with Box2D physics integration</li>
-                <li>Multi-character platformer gameplay systems</li>
-            </ul>
+            <div class="project-info">
+                <h3>Wireless DM-Controlled Magic Compass</h3>
+                <p class="tech">ESP32 - C++ - Web Server - Servo Control</p>
 
-            <a href="https://github.com/jacob77Seven/Overgrowth" target="_blank">
-                View on GitHub ->
-            </a>
-        </div>
-    </div>
+                <ul>
+                    <li>Built a wireless prop device for tabletop RPG gameplay</li>
+                    <li>Embedded web server allows DM to send real-time direction updates</li>
+                    <li>ESP32-controlled servo physically rotates compass needle</li>
+                    <li>Integrated LEDs and custom enclosure for immersive feedback</li>
+                </ul>
 
-    <!-- Compass Project -->
-    <div class="project">
-        <div class="media">
-            <img src="media/Compass2.jpg" alt="Wireless magic compass device">
-            <img src="media/CompassInternals.jpg" alt="Internal electronics of the compass">
-        </div>
-
-        <div class="project-info">
-            <h3>Wireless DM-Controlled Magic Compass</h3>
-            <p class="role"><strong>My role:</strong>Sole software developer responsible for device firmware and networking functionality.</p>
-            <p class="tech">ESP32 - C++ - Web Server - Servo Control</p>
-
-            <ul>
-                <li>Built a wireless prop device for tabletop RPG gameplay</li>
-                <li>Embedded web server allows DM to send real-time direction updates</li>
-                <li>ESP32-controlled servo physically rotates compass needle</li>
-                <li>Integrated LEDs and custom enclosure for immersive feedback</li>
-            </ul>
-
-            <a href="https://github.com/ThomasUNT/Compass-2" target="_blank">
-                View on GitHub ->
-            </a>
-        </div>
-    </div>
-
-    <!-- Datapad Project -->
-    <div class="project">
-        <div class="media">
-            <img src="media/Datapad2.png" alt="Handheld Starwars Datapad">
-            <img src="media/DatapadGUI.jpg" alt="Handheld Starwars Datapad">
+                <a href="https://github.com/ThomasUNT/Compass-2" target="_blank">
+                    View on GitHub ->
+                </a>
+            </div>
         </div>
 
-        <div class="project-info">
-            <h3>Wireless DM-Controlled Datapad</h3>
-            <p class="role"><strong>My role:</strong>Sole software developer responsible for all systems and networking functionality.</p>
-            <p class="tech">Raspberry Pi - Python - Custom GUI - Web Server - File I/O </p>
+        <!-- Datapad Project -->
+        <div class="project">
+            <div class="media">
+                <img src="media/Datapad2.png" alt="Handheld Starwars Datapad">
+                <img src="Media/DatapadGUI.jpg" alt="Handheld Starwars Datapad 2">
+            </div>
 
-            <ul>
-                <li>Designed and implemented a custom touchscreen GUI inspired by Star Wars interfaces</li>
-                <li>Built a local web server allowing a game master to send, view, and delete messages remotely</li>
-                <li>Implemented message storage and file management on-device</li>
-                <li>Developed as a live-use prop for a tabletop RPG campaign</li>
-            </ul>
+            <div class="project-info">
+                <h3>Wireless DM-Controlled Datapad</h3>
+                <p class="tech">Raspberry Pi - Python - Custom GUI - Web Server - File I/O </p>
 
-            <a href="https://github.com/Thomas63207/Datapad" target="_blank">
-                View on GitHub ->
-            </a>
-        </div>
-    </div>
+                <ul>
+                    <li>Designed and implemented a custom touchscreen GUI inspired by Star Wars interfaces</li>
+                    <li>Built a local web server allowing a game master to send, view, and delete messages remotely</li>
+                    <li>Implemented message storage and file management on-device</li>
+                    <li>Developed as a live-use prop for a tabletop RPG campaign</li>
+                </ul>
 
-    <!-- Game Project 2 -->
-    <div class="project">
-        <div class="media">
-            <video controls muted>
-                <source src="media/GameDemo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+                <a href="https://github.com/Thomas63207/Datapad" target="_blank">
+                    View on GitHub ->
+                </a>
+            </div>
         </div>
 
-        <div class="project-info">
-            <h3>2D Metroidvania Spellslinger</h3>
-            <p class="role"><strong>My role:</strong>Solo Developer responsible for all gameplay, systems, and artwork.</p>
-            <p class="tech">GameMaker - GML</p>
+        <!-- Game Project 2 -->
+        <div class="project">
+            <div class="media">
+                <video controls muted>
+                    <source src="Media/GameDemo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-            <ul>
-                <li>Metroidvania with rune-based spell casting</li>
-                <li>Directional input system inspired by Helldivers</li>
-                <li>Souls-inspired shield and resource mechanics</li>
-                <li>Custom UI, lighting, and animations</li>
-            </ul>
+            <div class="project-info">
+                <h3>2D Metroidvania Spellslinger</h3>
+                <p class="tech">GameMaker - GML</p>
 
-            <a href="https://github.com/Thomas63207/Tales-of-Might" target="_blank">
-                View on GitHub ->
-            </a>
+                <ul>
+                    <li>Metroidvania with rune-based spell casting</li>
+                    <li>Directional input system inspired by Helldivers</li>
+                    <li>Souls-inspired shield and resource mechanics</li>
+                    <li>Custom UI, lighting, and animations</li>
+                </ul>
+
+                <a href="https://github.com/Thomas63207/Tales-of-Might" target="_blank">
+                    View on GitHub ->
+                </a>
+            </div>
         </div>
-    </div>
 
-</section>
+    </section>
+</body>
+</html>

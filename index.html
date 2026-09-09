@@ -1,144 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thomas DeLange | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        discord: '#5865F2',
+                        discordHover: '#4752C4'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+            border-radius: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 8px;
+        }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #475569;
+            }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Thomas DeLange</h1>
-        <p class="subtitle">
-            Computer Science student interested in game development and software engineering.
-        </p>
-        <div class="links">
-            <a href="media/Resume.pdf" target="_blank">View Resume (PDF)</a>
-            <a href="https://github.com/ThomasUNT" target="_blank">GitHub</a>
-            <a href="mailto:tdelange632@gmail.com">Email</a>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-amber-500 selection:text-slate-900 flex flex-col min-h-screen custom-scrollbar">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex flex-col justify-center">
+                    <a href="/" class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                        <span class="text-amber-500">THOMAS</span> DELANGE
+                    </a>
+                    <span class="text-xs text-slate-400 font-medium tracking-wide">Software Engineer & UI/UX Designer</span>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="media/Resume.pdf" target="_blank" class="text-sm font-medium hover:text-amber-400 transition-colors">Resume</a>
+                    <a href="https://github.com/ThomasUNT" target="_blank" class="text-sm font-medium hover:text-amber-400 transition-colors">GitHub</a>
+                    <a href="mailto:tdelange632@gmail.com" class="text-sm font-medium hover:text-amber-400 transition-colors">tdelange632@gmail.com</a>
+                    <span class="text-slate-700">|</span>
+                    <a href="tel:9404354582" class="text-sm font-medium text-slate-400 hover:text-amber-400 transition-colors">940-435-4582</a>
+
+                    <a href="https://hearthlightdev.com" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 text-sm font-bold text-slate-900 bg-amber-500 hover:bg-amber-400 rounded-lg transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                        Visit Studio Site
+                    </a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <section>
-        <h2>Projects</h2>
+    <main class="flex-grow">
+        <!-- Featured Project Showcase: Campaign Companion -->
+        <section id="featured-project" class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-slate-800">
+            <!-- Background Glow -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-        <!-- Game Project 1 -->
-        <div class="project">
-            <div class="media">
-                <video controls muted>
-                    <source src="Media/OvergrowthDemo1Cropped.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <video controls muted>
-                    <source src="Media/OvergrowthDemo2Cropped.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-500 rounded-full shadow-lg shadow-amber-500/20">Featured Project</span>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Text Content -->
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                            Campaign Companion
+                        </h1>
+                        <p class="text-lg text-slate-400 mb-6 font-medium leading-relaxed">
+                            <strong class="text-slate-200">Founder & Lead Developer</strong> | Directed 10 developers across 3 Agile teams (currently onboarding a university capstone squad) | Founded Hearthlight Studios LLC for 100% IP ownership.
+                        </p>
+
+                        <!-- Tech Stack Badges -->
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-semibold text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-md">C#</span>
+                            <span class="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800 border border-slate-700 rounded-md">Unity</span>
+                            <span class="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800 border border-slate-700 rounded-md">Agile / SCRUM</span>
+                            <span class="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800 border border-slate-700 rounded-md">Image Processing</span>
+                            <span class="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800 border border-slate-700 rounded-md">Custom Node Editor</span>
+                            <span class="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800 border border-slate-700 rounded-md">Desktop Architecture</span>
+                        </div>
+
+                        <!-- Technical Wins -->
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-slate-300"><strong class="text-white">Custom C# Tooling:</strong> Built an interactive map-to-note node graph system, an image-processing biome brush pipeline, and an Obsidian-compatible rich text markdown parser.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-slate-300"><strong class="text-white">Portable File Architecture:</strong> Designed a human-readable, portable directory structure enabling users to seamlessly share and sync campaigns via standard asynchronous cloud drives (e.g., OneDrive) without centralized servers.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-slate-300"><strong class="text-white">Academic Recognition:</strong> Earned top course scores and selected by faculty as the model documentation showcase for future software engineering classes.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-slate-300"><strong class="text-white">Community & Growth:</strong> Scaled an active 78+ member Discord beta testing community driven by regular video devlogs and alpha releases.</span>
+                            </li>
+                        </ul>
+
+                        <!-- Call to Actions -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <a href="https://hearthlightdev.com" target="_blank" class="w-full sm:w-auto px-6 py-3 text-sm font-bold text-slate-900 bg-amber-500 hover:bg-amber-400 rounded-lg transition-all shadow-xl shadow-amber-500/20 text-center">
+                                Visit Studio Site (hearthlightdev.com)
+                            </a>
+                            <a href="https://discord.gg/QkfmetN3pw" target="_blank" class="w-full sm:w-auto px-4 py-3 text-sm font-bold text-white bg-discord hover:bg-discordHover rounded-lg transition-all shadow-lg flex justify-center items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" /></svg>
+                                Discord
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Media Showcase -->
+                    <div class="relative w-full aspect-video bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl group flex items-center justify-center">
+                        <div class="absolute inset-0 bg-slate-800 animate-pulse -z-10"></div>
+                        <img src="Images/campaign-node-demo.gif" alt="Node Graph & Biome Brush Feature Clip" class="w-full h-full object-cover relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="hidden text-center text-slate-500 p-8 z-20" style="display:none;">
+                            <svg class="w-12 h-12 mx-auto mb-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <p class="text-sm font-medium">10s Media Clip Placeholder<br>(Node Graph / Biome Brush)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="project-info">
-                <h3>2D Fantasy Platformer Team Project</h3>
-                <p class="role"><strong>My role:</strong> Designed and implemented the level pipeline, from authoring tools to runtime rendering and physics integration.</p>
-                <p class="tech">UNT LARC Engine - C++</p>
+        <!-- Project Archive Section -->
+        <section class="py-20 bg-slate-950">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-white mb-12 flex items-center gap-4">
+                    Other Projects
+                    <div class="h-px flex-grow bg-slate-800"></div>
+                </h2>
 
-                <ul>
-                    <li>Engine-level rendering and pipeline modifications</li>
-                    <li>Custom 3D sprite batching and depth sorting</li>
-                    <li>LDtk-driven levels with Box2D physics integration</li>
-                    <li>Multi-character platformer gameplay systems</li>
-                </ul>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-                <a href="https://github.com/jacob77Seven/Overgrowth" target="_blank">
-                    View on GitHub ->
-                </a>
+                    <!-- Project Card: 2D Fantasy Platformer -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-slate-700 transition-colors flex flex-col">
+                        <div class="relative w-full h-64 shrink-0 bg-slate-950 flex gap-1 overflow-x-auto snap-x custom-scrollbar">
+                            <video class="h-full w-auto object-cover snap-center shrink-0 border-r border-slate-800" controls muted>
+                                <source src="Media/OvergrowthDemo1Cropped.mp4" type="video/mp4">
+                            </video>
+                            <video class="h-full w-auto object-cover snap-center shrink-0" controls muted>
+                                <source src="Media/OvergrowthDemo2Cropped.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">2D Fantasy Platformer</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">C++</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">UNT LARC Engine</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6"><strong class="text-slate-200">Role:</strong> Designed and implemented the level pipeline, from authoring tools to runtime rendering and physics integration.</p>
+                            <ul class="space-y-2 mb-8 flex-grow text-sm text-slate-400">
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Engine-level rendering and pipeline modifications</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Custom 3D sprite batching and depth sorting</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> LDtk-driven levels with Box2D physics integration</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Multi-character platformer gameplay systems</li>
+                            </ul>
+                            <a href="https://github.com/jacob77Seven/Overgrowth" target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold text-sm transition-colors mt-auto">
+                                View on GitHub <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Compass -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-slate-700 transition-colors flex flex-col">
+                        <div class="relative w-full h-64 shrink-0 overflow-hidden bg-slate-950 grid grid-cols-2 gap-1 border-b border-slate-800">
+                            <!-- Changed object-cover to object-contain and added the lightbox-trigger class -->
+                            <img src="media/Compass2.jpg" alt="Wireless magic compass device" class="lightbox-trigger w-full h-full object-contain bg-slate-900 cursor-zoom-in hover:opacity-80 transition-opacity">
+                            <img src="media/CompassInternals.jpg" alt="Internal electronics of the compass" class="lightbox-trigger w-full h-full object-contain bg-slate-900 cursor-zoom-in hover:opacity-80 transition-opacity">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">Wireless DM-Controlled Compass</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">ESP32</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">C++</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">Web Server</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">Servo Control</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6"><strong class="text-slate-200">Role:</strong> Sole software developer responsible for device firmware and networking functionality.</p>
+                            <ul class="space-y-2 mb-8 flex-grow text-sm text-slate-400">
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Built a wireless prop device for tabletop RPG gameplay</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Embedded web server allows DM to send real-time direction updates</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> ESP32-controlled servo physically rotates compass needle</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Integrated LEDs and custom enclosure for immersive feedback</li>
+                            </ul>
+                            <a href="https://github.com/ThomasUNT/Compass" target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold text-sm transition-colors mt-auto">
+                                View on GitHub <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Datapad -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-slate-700 transition-colors flex flex-col">
+                        <div class="relative w-full h-64 shrink-0 overflow-hidden bg-slate-950 grid grid-cols-2 gap-1 border-b border-slate-800">
+                            <!-- Changed object-cover to object-contain and added the lightbox-trigger class -->
+                            <img src="media/Datapad2.png" alt="Handheld Starwars Datapad" class="lightbox-trigger w-full h-full object-contain bg-slate-900 cursor-zoom-in hover:opacity-80 transition-opacity">
+                            <img src="Media/DatapadGUI.jpg" alt="Handheld Starwars Datapad GUI" class="lightbox-trigger w-full h-full object-contain bg-slate-900 cursor-zoom-in hover:opacity-80 transition-opacity">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">Wireless DM-Controlled Datapad</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">Raspberry Pi</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">Python</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">Custom GUI</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6"><strong class="text-slate-200">Role:</strong> Sole software developer responsible for all systems and networking functionality.</p>
+                            <ul class="space-y-2 mb-8 flex-grow text-sm text-slate-400">
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Designed and implemented a custom touchscreen GUI inspired by Star Wars interfaces</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Built a local web server allowing a game master to send, view, and delete messages remotely</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Implemented message storage and file management on-device</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Developed as a live-use prop for a tabletop RPG campaign</li>
+                            </ul>
+                            <a href="https://github.com/Thomas63207/Datapad" target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold text-sm transition-colors mt-auto">
+                                View on GitHub <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Spellslinger -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-slate-700 transition-colors flex flex-col">
+                        <div class="relative w-full h-64 shrink-0 bg-slate-950 border-b border-slate-800">
+                            <video class="w-full h-full object-cover" controls muted>
+                                <source src="Media/GameDemo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">2D Metroidvania Spellslinger (WIP)</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">GameMaker</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-slate-300 bg-slate-800 rounded-md">GML</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6"><strong class="text-slate-200">Role:</strong> Solo Developer responsible for all gameplay, systems, and artwork.</p>
+                            <ul class="space-y-2 mb-8 flex-grow text-sm text-slate-400">
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Metroidvania with rune-based spell casting</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Directional input system inspired by Helldivers</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Souls-inspired shield and resource mechanics</li>
+                                <li class="flex gap-2"><span class="text-amber-500">•</span> Custom UI, lighting, and animations</li>
+                            </ul>
+                            <a href="https://github.com/Thomas63207/Tales-of-Might" target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold text-sm transition-colors mt-auto">
+                                View on GitHub <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <hr class="project-divider">
+    <footer class="py-8 border-t border-slate-800 text-center bg-slate-950 mt-auto">
+        <p class="text-sm text-slate-500">
+            &copy; 2026 Thomas DeLange. All rights reserved.
+        </p>
+    </footer>
 
+    <!-- Fullscreen Lightbox Overlay -->
+    <div id="image-lightbox" class="fixed inset-0 z-[100] hidden bg-slate-950/95 backdrop-blur-sm items-center justify-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 rounded-full transition-all cursor-pointer z-50">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Fullscreen view" class="max-h-[90vh] max-w-[95vw] object-contain rounded-lg shadow-2xl">
+    </div>
 
-        <!-- Compass Project -->
-        <div class="project">
-            <div class="media">
-                <img src="media/Compass2.jpg" alt="Wireless magic compass device">
-                <img src="media/CompassInternals.jpg" alt="Internal electronics of the compass">
-            </div>
+    <!-- Lightbox Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('lightbox-close');
 
-            <div class="project-info">
-                <h3>Wireless DM-Controlled Magic Compass</h3>
-                <p class="role"><strong>My role:</strong> Sole software developer responsible for device firmware and networking functionality.</p>
-                <p class="tech">ESP32 - C++ - Web Server - Servo Control</p>
+            // Open lightbox on click
+            document.querySelectorAll('.lightbox-trigger').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                    // Tiny delay to allow CSS display transition to catch up before fading in
+                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                    // Prevent background scrolling while open
+                    document.body.style.overflow = 'hidden';
+                });
+            });
 
-                <ul>
-                    <li>Built a wireless prop device for tabletop RPG gameplay</li>
-                    <li>Embedded web server allows DM to send real-time direction updates</li>
-                    <li>ESP32-controlled servo physically rotates compass needle</li>
-                    <li>Integrated LEDs and custom enclosure for immersive feedback</li>
-                </ul>
+            const closeLightbox = () => {
+                lightbox.classList.add('opacity-0');
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    lightbox.classList.remove('flex');
+                    lightboxImg.src = '';
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300); // Matches the duration-300 tailwind class
+            };
 
-                <a href="https://github.com/ThomasUNT/Compass" target="_blank">
-                    View on GitHub ->
-                </a>
-            </div>
-        </div>
+            // Close triggers
+            closeBtn.addEventListener('click', closeLightbox);
 
-        <hr class="project-divider">
+            // Close if clicking outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
 
-
-        <!-- Datapad Project -->
-        <div class="project">
-            <div class="media">
-                <img src="media/Datapad2.png" alt="Handheld Starwars Datapad">
-                <img src="Media/DatapadGUI.jpg" alt="Handheld Starwars Datapad 2">
-            </div>
-
-            <div class="project-info">
-                <h3>Wireless DM-Controlled Datapad</h3>
-                <p class="role"><strong>My role:</strong> Sole software developer responsible for all systems and networking functionality.</p>
-                <p class="tech">Raspberry Pi - Python - Custom GUI - Web Server - File I/O </p>
-
-                <ul>
-                    <li>Designed and implemented a custom touchscreen GUI inspired by Star Wars interfaces</li>
-                    <li>Built a local web server allowing a game master to send, view, and delete messages remotely</li>
-                    <li>Implemented message storage and file management on-device</li>
-                    <li>Developed as a live-use prop for a tabletop RPG campaign</li>
-                </ul>
-
-                <a href="https://github.com/Thomas63207/Datapad" target="_blank">
-                    View on GitHub ->
-                </a>
-            </div>
-        </div>
-
-        <hr class="project-divider">
-
-
-        <!-- Game Project 2 -->
-        <div class="project">
-            <div class="media">
-                <video controls muted>
-                    <source src="Media/GameDemo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="project-info">
-                <h3>2D Metroidvania Spellslinger (WIP)</h3>
-                <p class="role"><strong>My role:</strong> Solo Developer responsible for all gameplay, systems, and artwork.</p>
-                <p class="tech">GameMaker - GML</p>
-
-                <ul>
-                    <li>Metroidvania with rune-based spell casting</li>
-                    <li>Directional input system inspired by Helldivers</li>
-                    <li>Souls-inspired shield and resource mechanics</li>
-                    <li>Custom UI, lighting, and animations</li>
-                </ul>
-
-                <a href="https://github.com/Thomas63207/Tales-of-Might" target="_blank">
-                    View on GitHub ->
-                </a>
-            </div>
-        </div>
-
-    </section>
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

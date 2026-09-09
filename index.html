@@ -55,6 +55,7 @@
             .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                 background: #475569;
             }
+
     </style>
 </head>
 <body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-amber-500 selection:text-slate-900 flex flex-col min-h-screen custom-scrollbar">
@@ -148,14 +149,65 @@
                         </div>
                     </div>
 
-                    <!-- Media Showcase -->
-                    <div class="relative w-full aspect-video bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl group flex items-center justify-center">
-                        <div class="absolute inset-0 bg-slate-800 animate-pulse -z-10"></div>
-                        <img src="Images/campaign-node-demo.gif" alt="Node Graph & Biome Brush Feature Clip" class="w-full h-full object-cover relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="hidden text-center text-slate-500 p-8 z-20" style="display:none;">
-                            <svg class="w-12 h-12 mx-auto mb-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                            <p class="text-sm font-medium">10s Media Clip Placeholder<br>(Node Graph / Biome Brush)</p>
+                    <!-- Media Showcase (Video + Carousel) -->
+                    <div class="flex flex-col gap-6 w-full">
+    
+                        <!-- YouTube Video -->
+                        <div class="relative w-full aspect-video bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                            <iframe class="absolute top-0 left-0 w-full h-full" 
+                                    src="https://www.youtube.com/embed/crSrOvQjCXk" 
+                                    title="Campaign Companion Demo" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                            </iframe>
                         </div>
+
+                        <!-- Image Carousel Wrapper -->
+                        <div class="relative w-full group">
+        
+                            <!-- Left Navigation Button (Appears on hover) -->
+                            <button id="carousel-prev" class="absolute left-2 top-[calc(50%-0.5rem)] -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10 shadow-lg border border-slate-700 focus:opacity-100 cursor-pointer">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+
+                            <!-- The Scroll Track (Added snap-mandatory and scroll-smooth) -->
+                            <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth custom-scrollbar gap-4 pb-2">
+                                <img src="Media/main-menu-screenshot.PNG" alt="Campaign Companion - Main Menu Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/open-map-screenshot.PNG" alt="Campaign Companion - Open Map Menu screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/map-viewer-screenshot.PNG" alt="Campaign Companion - Map Viewer Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/notes-screenshot.PNG" alt="Campaign Companion - Notes Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/brush-screenshot.PNG" alt="Campaign Companion - Brush Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/stamp-screenshot.PNG" alt="Campaign Companion - Stamp Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                                <img src="Media/map-generation-screenshot.PNG" alt="Campaign Companion - Map Generation Settings Screenshot" class="lightbox-trigger w-full h-auto aspect-video object-cover snap-center shrink-0 rounded-xl border border-slate-800 bg-slate-900 shadow-lg cursor-zoom-in hover:opacity-80 transition-opacity">
+                            </div>
+
+                            <!-- Right Navigation Button (Appears on hover) -->
+                            <button id="carousel-next" class="absolute right-2 top-[calc(50%-0.5rem)] -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10 shadow-lg border border-slate-700 focus:opacity-100 cursor-pointer">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+        
+                        </div>
+
+                        <!-- Carousel Button Logic -->
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const track = document.getElementById('carousel-track');
+                                const prev = document.getElementById('carousel-prev');
+                                const next = document.getElementById('carousel-next');
+
+                                // Scroll left by the width of one image + the gap
+                                prev.addEventListener('click', () => {
+                                    track.scrollBy({ left: -(track.clientWidth + 16), behavior: 'smooth' });
+                                });
+
+                                // Scroll right by the width of one image + the gap
+                                next.addEventListener('click', () => {
+                                    track.scrollBy({ left: track.clientWidth + 16, behavior: 'smooth' });
+                                });
+                            });
+                        </script>
+    
                     </div>
                 </div>
             </div>
